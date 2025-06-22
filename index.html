@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Plat 3D - Compatibilité totale</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background: #f0f0f0;
-        padding: 20px;
-        text-align: center;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu 3D - Plat</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    model-viewer {
+      width: 100%;
+      max-width: 500px;
+      height: 400px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
 
-      model-viewer {
-        width: 100%;
-        max-width: 500px;
-        height: 400px;
-        margin: 20px auto;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      }
-    </style>
-  </head>
-  <body>
-    <h1>🍝 Spaghetti Bolognaise</h1>
+  <h1>🍝 Spaghetti Bolognaise</h1>
+  <p>Visualisez ce plat en 3D :</p>
 
-    <model-viewer
-      src="https://modelviewer.dev/shared-assets/models/Hamburger.glb"
-      alt="Spaghetti en 3D"
-      camera-controls
-      auto-rotate
-      shadow-intensity="1"
-      interaction-prompt="none"
-      touch-action="pan-y">
-    </model-viewer>
+  <model-viewer
+    src="https://modelviewer.dev/shared-assets/models/Hamburger.glb"
+    alt="Spaghetti en 3D"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1">
+  </model-viewer>
 
-    <p>Tournez et zoomez le plat en 3D avec vos doigts 👆</p>
-  </body>
+  <p style="color: #666;">Tournez, zoomez avec vos doigts ou la souris.</p>
+
+</body>
 </html>
