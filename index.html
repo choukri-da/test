@@ -1,37 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Menu 3D - Démo Plat</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modèle 3D avec Réalité Augmentée</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background: #f9f9f9;
-        padding: 20px;
-        text-align: center;
-      }
-      model-viewer {
-        width: 100%;
-        max-width: 500px;
-        height: 400px;
-        margin: auto;
-      }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            margin: 20px 0;
+            color: #333;
+        }
+        
+        model-viewer {
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .ar-button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 24px;
+            margin: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .ar-button:hover {
+            background-color: #3367d6;
+        }
+        
+        @media (max-width: 600px) {
+            model-viewer {
+                height: 400px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <h1>🍔 Burger Démo</h1>
-
-    <model-viewer
-      src="https://modelviewer.dev/shared-assets/models/Hamburger.glb"
-      alt="Burger en 3D"
-      ar
-      ar-modes="scene-viewer webxr quick-look"
-      auto-rotate
-      camera-controls
-      shadow-intensity="1">
-    </model-viewer>
-
-    <p>Cliquez sur le bouton AR pour voir le plat en réalité augmentée !</p>
-  </body>
+</head>
+<body>
+    <div class="container">
+        <h1>Modèle 3D avec Réalité Augmentée</h1>
+        <model-viewer
+            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+            alt="Un modèle 3D d'astronaute"
+            camera-controls
+            auto-rotate
+            ar
+            ar-modes="scene-viewer quick-look"
+            ar-scale="auto"
+            ar-placement="floor"
+            ios-src="https://modelviewer.dev/shared-assets/models/Astronaut.usdz">
+            
+            <button class="ar-button" slot="ar-button">
+                Voir en Réalité Augmentée
+            </button>
+            
+        </model-viewer>
+        <p>Faites glisser pour tourner le modèle · Pincez pour zoomer</p>
+        <p>Cliquez sur le bouton pour voir en AR</p>
+    </div>
+</body>
 </html>
