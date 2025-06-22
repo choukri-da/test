@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modèle 3D avec Réalité Augmentée</title>
+    <title>Pizza 3D Interactive</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
         body {
@@ -41,22 +41,6 @@
             align-items: center;
         }
         
-        .ar-button {
-            background-color: #4285f4;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 12px 24px;
-            margin: 10px 0;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .ar-button:hover {
-            background-color: #3367d6;
-        }
-        
         @media (max-width: 600px) {
             model-viewer {
                 height: 400px;
@@ -70,25 +54,18 @@
 </head>
 <body>
     <div class="container">
-        <h1>Modèle 3D avec Réalité Augmentée</h1>
+        <h1>🍕 Pizza 3D Interactive</h1>
         <model-viewer
-            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-            alt="Un modèle 3D d'astronaute"
+            src="https://github.com/choukri-da/test/blob/master/uploads_files_2465920_burger_merged.glb"
+            alt="Une délicieuse pizza 3D"
             camera-controls
             auto-rotate
-            ar
-            ar-modes="scene-viewer quick-look"
-            ar-scale="auto"
-            ar-placement="floor"
-            ios-src="https://modelviewer.dev/shared-assets/models/Astronaut.usdz">
-            
-            <button class="ar-button" slot="ar-button">
-                Voir en Réalité Augmentée
-            </button>
-            
+            ar-status="not-presenting">
+                <button slot="ar-button" style="display: none;">
+                    Activer la réalité augmentée
+                </button>
         </model-viewer>
-        <p>Faites glisser pour tourner le modèle · Pincez pour zoomer</p>
-        <p>Cliquez sur le bouton pour voir en AR</p>
+        <p>Faites glisser pour tourner la pizza · Pincez pour zoomer</p>
     </div>
 </body>
 </html>
